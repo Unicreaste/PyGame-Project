@@ -36,6 +36,18 @@ def load_image(name, color_key=None):
 
 crashed = False
 
+class Name(pygame.sprite.Sprite):
+    image = load_image('Name.png', color_key=-1)
+
+    def __init__(self, group):
+        super().__init__(group)
+        self.image = Name.image
+        self.rect = self.image.get_rect()
+        while True:
+            self.rect.topleft = (350, 30)
+            if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
+                break
+
 
 class ButonPlay(pygame.sprite.Sprite):
     image = load_image('Button_Play.png', color_key=-1)
@@ -80,6 +92,7 @@ all_sprites = pygame.sprite.Group()
 ButonPlay(all_sprites)
 ButonSettings(all_sprites)
 ButonExit(all_sprites)
+Name(all_sprites)
 
 run = True
 while run:
