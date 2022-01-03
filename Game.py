@@ -10,6 +10,10 @@ gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Pirate robbery')
 clock = pygame.time.Clock()
 
+pygame.mixer.music.load('Фон(м).mp3')
+pygame.mixer.music.set_volume(10)
+pygame.mixer.music.play()
+
 background = pygame.image.load('Фон.png').convert()
 background = pygame.transform.smoothscale(background, gameDisplay.get_size())
 
