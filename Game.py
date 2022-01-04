@@ -19,6 +19,7 @@ background = pygame.transform.smoothscale(background, gameDisplay.get_size())
 
 black = (0, 0, 0)
 white = (255, 255, 255)
+run = True
 
 
 def load_image(name, color_key=None):
@@ -52,6 +53,11 @@ class Name(pygame.sprite.Sprite):
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
+    def get_event(self, event):
+        global run
+        if self.rect.collidepoint(event.pos):
+            pass
+
 
 class ButonPlay(pygame.sprite.Sprite):
     image = load_image('Button_Play.png', color_key=-1)
@@ -64,6 +70,11 @@ class ButonPlay(pygame.sprite.Sprite):
             self.rect.topleft = (50, 150)
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
+
+    def get_event(self, event):
+        global run
+        if self.rect.collidepoint(event.pos):
+            pass
 
 
 class ButonSettings(pygame.sprite.Sprite):
@@ -78,6 +89,12 @@ class ButonSettings(pygame.sprite.Sprite):
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
+    def get_event(self, event):
+        global run
+        if self.rect.collidepoint(event.pos):
+            pass
+
+
 class ButonExit(pygame.sprite.Sprite):
     image = load_image('Button_Exit.png', color_key=-1)
 
@@ -90,6 +107,11 @@ class ButonExit(pygame.sprite.Sprite):
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
+    def get_event(self, event):
+        global run
+        if self.rect.collidepoint(event.pos):
+            run = False
+
 
 all_sprites = pygame.sprite.Group()
 
@@ -98,7 +120,6 @@ ButonSettings(all_sprites)
 ButonExit(all_sprites)
 Name(all_sprites)
 
-run = True
 while run:
     clock.tick(60)
 
@@ -106,6 +127,9 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            for bt in all_sprites:
+                bt.get_event(event)
 
     # draw the background
     gameDisplay.blit(background, (0, 0))
