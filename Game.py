@@ -140,7 +140,7 @@ class SoundButton(pygame.sprite.Sprite):
                 self.image = self.image3
 
     def close(self):
-        pass
+        self.kill()
 
 
 class ButonX(pygame.sprite.Sprite):
