@@ -1,5 +1,6 @@
 import pygame
 import os
+import webbrowser
 
 pygame.init()
 
@@ -11,14 +12,12 @@ pygame.display.set_caption('Pirate robbery')
 clock = pygame.time.Clock()
 
 pygame.mixer.music.load('Фон(м).mp3')
-pygame.mixer.music.set_volume(3)
+pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 
 background = pygame.image.load('Фон.png').convert()
 background = pygame.transform.smoothscale(background, gameDisplay.get_size())
 
-black = (0, 0, 0)
-white = (255, 255, 255)
 run = True
 
 
@@ -78,23 +77,24 @@ class ButonPlay(pygame.sprite.Sprite):
             pass
 
 
-class ButonSettings(pygame.sprite.Sprite):
-    image = load_image('Button_Settings.png', color_key=-1)
-
-    def __init__(self, group):
-        super().__init__(group)
-        self.image = ButonSettings.image
-        self.rect = self.image.get_rect()
-        while True:
-            self.rect.topleft = (50, 250)
-            if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
-                break
-
-    def get_event(self, event):
-        global run
-        if self.rect.collidepoint(event.pos):
-            SoundButton(all_sprites)
-            ButonX(all_sprites)
+# class ButonSettings(pygame.sprite.Sprite):
+#     image = load_image('Button_Settings.png', color_key=-1)
+#
+#     def __init__(self, group):
+#         super().__init__(group)
+#         self.image = ButonSettings.image
+#         self.rect = self.image.get_rect()
+#         while True:
+#             self.rect.topleft = (50, 250)
+#             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
+#                 break
+#
+#     def get_event(self, event):
+#         global run
+#         if self.rect.collidepoint(event.pos):
+#             pass
+#             # SoundButton(all_sprites)
+#             # ButonX(all_sprites)
 
 
 class ButonExit(pygame.sprite.Sprite):
@@ -105,7 +105,7 @@ class ButonExit(pygame.sprite.Sprite):
         self.image = ButonExit.image
         self.rect = self.image.get_rect()
         while True:
-            self.rect.topleft = (50, 350)
+            self.rect.topleft = (50, 250)
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
@@ -125,7 +125,7 @@ class SoundButton(pygame.sprite.Sprite):
         self.image = SoundButton.image
         self.rect = self.image.get_rect()
         while True:
-            self.rect.topleft = (450, 250)
+            self.rect.topleft = (700, 500)
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
@@ -135,39 +135,36 @@ class SoundButton(pygame.sprite.Sprite):
             if pygame.mixer.music.get_volume() > 0:
                 pygame.mixer.music.set_volume(0)
                 self.image = self.image2
+
             else:
                 pygame.mixer.music.set_volume(10)
                 self.image = self.image3
 
-    def close(self):
-        self.kill()
 
-
-class ButonX(pygame.sprite.Sprite):
-    image = load_image('Bt_X.png', color_key=-1)
-
-    def __init__(self, group):
-        super().__init__(group)
-        self.image = ButonX.image
-        self.rect = self.image.get_rect()
-        while True:
-            self.rect.topleft = (650, 50)
-            if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
-                break
-
-    def get_event(self, event):
-        global run
-        if self.rect.collidepoint(event.pos):
-            self.kill()
-            SoundButton.close(self)
+# class ButonX(pygame.sprite.Sprite):
+#     image = load_image('Bt_X.png', color_key=-1)
+#
+#     def __init__(self, group):
+#         super().__init__(group)
+#         self.image = ButonX.image
+#         self.rect = self.image.get_rect()
+#         while True:
+#             self.rect.topleft = (650, 50)
+#             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
+#                 break
+#
+#     def get_event(self, event):
+#         global run
+#         if self.rect.collidepoint(event.pos):
+#             self.kill()
 
 
 all_sprites = pygame.sprite.Group()
 
 ButonPlay(all_sprites)
-ButonSettings(all_sprites)
 ButonExit(all_sprites)
 Name(all_sprites)
+SoundButton(all_sprites)
 
 while run:
     clock.tick(60)
