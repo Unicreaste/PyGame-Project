@@ -16,7 +16,7 @@ pygame.mixer.music.load('Фон(м).mp3')
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 
-background = pygame.image.load('Корабль.png').convert()
+background = pygame.image.load('Фон.png').convert()
 background = pygame.transform.smoothscale(background, gameDisplay.get_size())
 
 run = True
@@ -75,7 +75,7 @@ class ButonPlay(pygame.sprite.Sprite):
     def get_event(self, event):
         global run
         if self.rect.collidepoint(event.pos):
-            runs()
+            pass
 
 
 class ButonExit(pygame.sprite.Sprite):
