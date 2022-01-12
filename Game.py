@@ -6,6 +6,7 @@ pygame.init()
 
 display_width = 800
 display_height = 600
+MOVE_SPEED = 7
 
 gameDisplay = pygame.display.set_mode((display_width, display_height))
 pygame.display.set_caption('Pirate robbery')
@@ -15,10 +16,13 @@ pygame.mixer.music.load('Фон(м).mp3')
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play()
 
-background = pygame.image.load('Фон.png').convert()
+background = pygame.image.load('Корабль.png').convert()
 background = pygame.transform.smoothscale(background, gameDisplay.get_size())
 
 run = True
+
+loc_x, loc_y = 400, 400
+pers_im = pygame.image.load('data/Player.png')
 
 
 def load_image(name, color_key=None):
@@ -36,9 +40,6 @@ def load_image(name, color_key=None):
     else:
         image = image.convert_alpha()
     return image
-
-
-crashed = False
 
 
 class Name(pygame.sprite.Sprite):
@@ -74,27 +75,7 @@ class ButonPlay(pygame.sprite.Sprite):
     def get_event(self, event):
         global run
         if self.rect.collidepoint(event.pos):
-            pass
-
-
-# class ButonSettings(pygame.sprite.Sprite):
-#     image = load_image('Button_Settings.png', color_key=-1)
-#
-#     def __init__(self, group):
-#         super().__init__(group)
-#         self.image = ButonSettings.image
-#         self.rect = self.image.get_rect()
-#         while True:
-#             self.rect.topleft = (50, 250)
-#             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
-#                 break
-#
-#     def get_event(self, event):
-#         global run
-#         if self.rect.collidepoint(event.pos):
-#             pass
-#             # SoundButton(all_sprites)
-#             # ButonX(all_sprites)
+            runs()
 
 
 class ButonExit(pygame.sprite.Sprite):
@@ -135,32 +116,12 @@ class SoundButton(pygame.sprite.Sprite):
             if pygame.mixer.music.get_volume() > 0:
                 pygame.mixer.music.set_volume(0)
                 self.image = self.image2
-
             else:
                 pygame.mixer.music.set_volume(10)
                 self.image = self.image3
 
 
-# class ButonX(pygame.sprite.Sprite):
-#     image = load_image('Bt_X.png', color_key=-1)
-#
-#     def __init__(self, group):
-#         super().__init__(group)
-#         self.image = ButonX.image
-#         self.rect = self.image.get_rect()
-#         while True:
-#             self.rect.topleft = (650, 50)
-#             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
-#                 break
-#
-#     def get_event(self, event):
-#         global run
-#         if self.rect.collidepoint(event.pos):
-#             self.kill()
-
-
 all_sprites = pygame.sprite.Group()
-
 ButonPlay(all_sprites)
 ButonExit(all_sprites)
 Name(all_sprites)
@@ -175,8 +136,17 @@ while run:
         if event.type == pygame.MOUSEBUTTONDOWN:
             for bt in all_sprites:
                 bt.get_event(event)
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                loc_y -= 25
+            if event.key == pygame.K_s:
+                loc_y += 25
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
+                loc_x -= 25
+            if event.key == pygame.K_d:
+                loc_x += 25
 
-    # draw the background
     gameDisplay.blit(background, (0, 0))
+    gameDisplay.blit(pers_im, (loc_x, loc_y))
     all_sprites.draw(gameDisplay)
     pygame.display.flip()
