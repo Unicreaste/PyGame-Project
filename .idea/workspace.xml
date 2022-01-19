@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c476fc5-0ce9-409e-81d3-2107717e27e0" name="Default Changelist" comment="Удалена кнопка Settings и звуковая кнопка перемещена отдельно в низ экрана">
+    <list default="true" id="6c476fc5-0ce9-409e-81d3-2107717e27e0" name="Default Changelist" comment="(Бета) Персонаж и его Недодвижение">
+      <change afterPath="$PROJECT_DIR$/Ship.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/Player.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Корабль.png" beforeDir="false" />
     </list>
+    <list id="0452ee2f-bc6d-4b13-8a53-ce6cbdc2faa9" name="Revert &quot;background&quot;" comment="Revert &quot;background&quot;&#10;&#10;This reverts commit b401ec1b" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +28,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="ProjectId" id="23BoAqjmoNxKx7jq5o6PMrUrDd5" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -80,6 +85,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Ship" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pirate robbery" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ship.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="anim_loader" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Pirate robbery" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,6 +119,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Wandering Soul Windows/scripts/anim_loader.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pirate robbery" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ChromeDinosaur-master" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ChromeDinosaur-master/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,9 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Game" />
+        <item itemvalue="Python.Ship" />
         <item itemvalue="Python.Пример" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.anim_loader" />
-        <item itemvalue="Python.Game" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +244,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641503925287</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="(Бета) Персонаж и его Недодвижение">
+      <created>1642012336420</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642012336420</updated>
+    </task>
+    <task id="LOCAL-00010" summary="(Бета) Персонаж и его Недодвижение">
+      <created>1642012403600</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642012403600</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +294,7 @@
     <MESSAGE value="Неработает X" />
     <MESSAGE value="Неработает X(C файлами)" />
     <MESSAGE value="Удалена кнопка Settings и звуковая кнопка перемещена отдельно в низ экрана" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалена кнопка Settings и звуковая кнопка перемещена отдельно в низ экрана" />
+    <MESSAGE value="(Бета) Персонаж и его Недодвижение" />
+    <option name="LAST_COMMIT_MESSAGE" value="(Бета) Персонаж и его Недодвижение" />
   </component>
 </project>
