@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c476fc5-0ce9-409e-81d3-2107717e27e0" name="Default Changelist" comment="(Бета) Персонаж и его Недодвижение">
-      <change afterPath="$PROJECT_DIR$/Ship.py" afterDir="false" />
+    <list default="true" id="6c476fc5-0ce9-409e-81d3-2107717e27e0" name="Default Changelist" comment="УРААА!!!&#10;Работающая заставка, и плюс минус работающая игра">
+      <change afterPath="$PROJECT_DIR$/Assets/Other/Cloud.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Корабль.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Фон.png" beforeDir="false" afterPath="$PROJECT_DIR$/Фон.png" afterDir="false" />
     </list>
     <list id="0452ee2f-bc6d-4b13-8a53-ce6cbdc2faa9" name="Revert &quot;background&quot;" comment="Revert &quot;background&quot;&#10;&#10;This reverts commit b401ec1b" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,8 +38,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pythonProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Assets/Other" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\STEPA\PycharmProjects\Pirate robbery\Assets\Other" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.Game">
     <configuration name="Пример" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -172,8 +176,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Game" />
-        <item itemvalue="Python.Ship" />
         <item itemvalue="Python.Пример" />
+        <item itemvalue="Python.Ship" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.anim_loader" />
       </list>
@@ -258,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642012403600</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="УРААА!!!&#10;Работающая заставка, и плюс минус работающая игра">
+      <created>1642600385544</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642600385544</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +283,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="tests" />
                       </list>
                     </value>
                   </entry>
@@ -295,6 +306,7 @@
     <MESSAGE value="Неработает X(C файлами)" />
     <MESSAGE value="Удалена кнопка Settings и звуковая кнопка перемещена отдельно в низ экрана" />
     <MESSAGE value="(Бета) Персонаж и его Недодвижение" />
-    <option name="LAST_COMMIT_MESSAGE" value="(Бета) Персонаж и его Недодвижение" />
+    <MESSAGE value="УРААА!!!&#10;Работающая заставка, и плюс минус работающая игра" />
+    <option name="LAST_COMMIT_MESSAGE" value="УРААА!!!&#10;Работающая заставка, и плюс минус работающая игра" />
   </component>
 </project>

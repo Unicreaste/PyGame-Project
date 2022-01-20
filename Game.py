@@ -4,7 +4,7 @@ import pygame
 
 pygame.init()
 
-display_width = 800
+display_width = 1100
 display_height = 600
 MOVE_SPEED = 7
 
@@ -32,6 +32,10 @@ JUMPING = [pygame.image.load(os.path.join("Assets/Ship", "Gj1.png")),
 SMALL_LANDS = [pygame.image.load(os.path.join("Assets/lands", "Островок.png")),
                pygame.image.load(os.path.join("Assets/lands", "Островок2.png")),
                pygame.image.load(os.path.join("Assets/lands", "Островок3.png"))]
+
+CLOUD = pygame.image.load(os.path.join("Assets/Other", "Cloud.png"))
+
+SAN = pygame.image.load(os.path.join("Assets/Other", "San.png"))
 
 BG = pygame.image.load(os.path.join("Assets/Other", "Море.png"))
 
@@ -94,6 +98,41 @@ class Ship:
         SCREEN.blit(self.image, (self.dino_rect.x, self.dino_rect.y))
 
 
+class San:
+    def __init__(self):
+        self.x = random.randint(800, 1000)
+        self.y = random.randint(50, 100)
+        self.image = SAN
+        self.width = self.image.get_width()
+
+    def update(self):
+        self.x += game_speed // 200
+        if self.x < -self.width:
+            self.x = SCREEN_WIDTH + random.randint(2500, 3000)
+            self.y = random.randint(50, 100)
+
+    def draw(self, SCREEN):
+        SCREEN.blit(self.image, (self.x, -50))
+
+
+
+class Cloud:
+    def __init__(self):
+        self.x = SCREEN_WIDTH + random.randint(800, 1000)
+        self.y = random.randint(50, 100)
+        self.image = CLOUD
+        self.width = self.image.get_width()
+
+    def update(self):
+        self.x -= game_speed
+        if self.x < -self.width:
+            self.x = SCREEN_WIDTH + random.randint(2500, 3000)
+            self.y = random.randint(50, 100)
+
+    def draw(self, SCREEN):
+        SCREEN.blit(self.image, (self.x, self.y))
+
+
 class Obstacle:
     def __init__(self, image, type):
         self.image = image
@@ -122,6 +161,8 @@ def play():
     run = True
     clock = pygame.time.Clock()
     player = Ship()
+    cloud = Cloud()
+    san = San()
     game_speed = 20
     x_pos_bg = 0
     y_pos_bg = 380
@@ -175,6 +216,12 @@ def play():
                 menu(death_count)
 
         background()
+
+        cloud.draw(SCREEN)
+        cloud.update()
+
+        san.draw(SCREEN)
+        san.update()
 
         score()
 
@@ -295,7 +342,7 @@ class SoundButton(pygame.sprite.Sprite):
         self.image = SoundButton.image
         self.rect = self.image.get_rect()
         while True:
-            self.rect.topleft = (700, 500)
+            self.rect.topleft = (1000, 500)
             if len(pygame.sprite.spritecollide(self, all_sprites, False)) == 1:
                 break
 
